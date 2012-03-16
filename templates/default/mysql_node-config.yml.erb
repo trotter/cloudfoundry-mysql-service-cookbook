@@ -1,0 +1,23 @@
+---
+local_db: sqlite3:<%= node.cloudfoundry_mysql_service.node.base_dir %>/mysql_node.db
+base_dir: <%= node.cloudfoundry_mysql_service.node.base_dir %>
+mysqldump_bin: mysqldump
+gzip_bin: gzip
+mysql_bin: mysql
+mbus: nats://<%= node.nats_server.user %>:<%= node.nats_server.password %>@<%= node.cloudfoundry_common.nats_server.host %>:<%= node.nats_server.port %>/
+index: <%= node.cloudfoundry_mysql_service.node[:index] %>
+pid: <%= node.cloudfoundry_mysql_service.node.pid_file %>
+available_storage: <%= node.cloudfoundry_mysql_service.node.available_storage %>
+node_id: mysql_node_<%= node.cloudfoundry_mysql_service.node[:index] %>
+max_db_size: <%= node.cloudfoundry_mysql_service.node.max_db_size %>
+max_long_query: <%= node.cloudfoundry_mysql_service.node.max_long_query %>
+max_long_tx: <%= node.cloudfoundry_mysql_service.node.max_long_tx %>
+migration_nfs: <%= node.cloudfoundry_mysql_service.node.migration_nfs %>
+mysql:
+  host: localhost #<%= node.mysql.bind_address %>
+  port: 3306
+  user: root
+  pass: <%= node.mysql.server_root_password %>
+logging:
+  level: <%= node.cloudfoundry_mysql_service.node.log_level %>
+  file: <%= node.cloudfoundry_mysql_service.node.log_file %>
