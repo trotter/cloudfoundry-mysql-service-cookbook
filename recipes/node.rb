@@ -1,5 +1,9 @@
 include_recipe "mysql::server"
 
+package 'libcurl3'
+package 'libcurl3-gnutls'
+package 'libcurl4-openssl-dev'
+
 package "sqlite3"
 package "libsqlite3-ruby"
 package "libsqlite3-dev"
