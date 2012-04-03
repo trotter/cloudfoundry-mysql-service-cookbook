@@ -9,6 +9,6 @@ version          "0.0.1"
   supports os
 end
 
-%w( mysql cloudfoundry-common bluepill ).each do |cb|
+%w( mysql cloudfoundry-common ).each do |cb|
   depends cb
 end
