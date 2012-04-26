@@ -12,7 +12,7 @@ cloudfoundry_component "mysql_node" do
   install_path File.join(node.cloudfoundry_common.vcap.install_path, "services", "mysql")
   bin_file     File.join(node.cloudfoundry_common.vcap.install_path, "bin", "services", "mysql_node")
   pid_file     node.cloudfoundry_mysql_service.node.pid_file
-  log_file     node.cloudfoundry_mysql_service.node.pid_file
+  log_file     node.cloudfoundry_mysql_service.node.log_file
 end
 
 directory node.cloudfoundry_mysql_service.node.base_dir do
